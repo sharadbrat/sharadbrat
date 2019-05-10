@@ -1,0 +1,66 @@
+@import '../../style/mixin';
+@import '../../style/variables';
+@import "../../style/typography";
+
+.blog-article {
+  @include content-container();
+  position: relative;
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+.blog-article__heading {
+  @include typography-heading-medium();
+
+  display: block;
+  margin-bottom: 4px;
+  font-size: 24px;
+  max-width: fit-content;
+  font-family: Raleway, sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.blog-article__time {
+  @include typography-caption();
+  display: block;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  color: $color-dark-text-secondary;
+}
+
+.blog-article__description {
+  @include typography-paragraph();
+
+  display: block;
+  font-family: sans-serif;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  font-weight: 200;
+
+  text-align: justify;
+}
+
+.blog-article__link {
+  @include typography-link();
+
+  display: block;
+  width: fit-content;
+  padding: 5px;
+  margin-left: auto;
+
+  color: $color-palette-light-blue;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 0 0 0 white, 0 3px 0 0 $color-palette-light-blue;
+  transition: box-shadow ease-in-out 70ms;
+  will-change: box-shadow;
+
+  &:focus, &:hover {
+    box-shadow: 0 5px 0 0 white, 0 8px 0 0 $color-palette-light-blue;
+  }
+}

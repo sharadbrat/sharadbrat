@@ -1,0 +1,423 @@
+@mixin word-animation($translateX, $name) {
+  @keyframes word-animation-#{$name} {
+    $base: -100vw;
+    $translateY: 0;
+    $border-radius: 70px;
+
+    0% {
+      transform: translate3d($base, $translateY, 0) rotateX(30deg) rotateY(45deg) scale(0.7);
+      animation-timing-function: ease-in-out;
+      border-radius: $border-radius;
+    }
+
+    25% {
+      transform: translate3d($translateX, $translateY, 0) rotateX(30deg) rotateY(45deg) scale(0.7);
+      border-radius: $border-radius;
+    }
+
+    33% {
+      transform: translate3d($translateX, $translateY, 0) rotateX(30deg) rotateY(45deg) scale(0.7);
+      animation-timing-function: ease-out;
+      border-radius: $border-radius;
+    }
+
+    43% {
+      transform: translate3d($translateX + $translateX / 8, $translateY, 0) rotateX(30deg) rotateY(45deg) scale(0.7);
+      border-radius: $border-radius;
+    }
+
+    48% {
+      transform: translate3d(0, $translateY, 0) rotateX(30deg) rotateY(45deg) scale(0.7);
+      border-radius: $border-radius;
+    }
+
+    54% {
+      transform: translate3d(0, $translateY, 0) rotateX(30deg) rotateY(45deg) scale(0.7);
+      border-radius: $border-radius;
+    }
+
+    68% {
+      transform: translate3d(0, $translateY, 0) rotateX(0) rotateY(0) scale(0.7);
+      animation-timing-function: ease-in-out;
+      border-radius: $border-radius;
+    }
+
+    85% {
+      transform: translate3d(0, $translateY, 0) rotateX(0) rotateY(0) scale(1);
+      border-radius: 0;
+    }
+  }
+}
+
+@keyframes background_animations {
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes background-canvas-animations {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes banner-color {
+  0% {
+    color: #000000;
+  }
+
+  100% {
+    color: #FFFFFF;
+  }
+}
+
+@keyframes navigation-color {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin all-words-animation($translateX) {
+  @include word-animation($translateX, 1);
+  @include word-animation(0, 2);
+  @include word-animation(-$translateX, 3);
+}
+
+@include all-words-animation(25%);
+
+$duration: 3s;
+$background-duration: 1s;
+
+.home-animation-enter {
+  #word-1 {
+    animation: word-animation-1 $duration linear, background_animations $background-duration ease-in-out $duration - $background-duration forwards;
+  }
+
+  #word-2 {
+    animation: word-animation-2 $duration linear, background_animations $background-duration ease-in-out $duration - $background-duration forwards;
+  }
+
+  #word-3 {
+    animation: word-animation-3 $duration linear, background_animations 200ms ease-in-out $duration - ($background-duration - .25s) forwards;
+  }
+
+  .home__animation {
+    animation-name: background_animations, banner-color;
+    animation-delay: $duration - ($background-duration);
+    animation-duration: $background-duration;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  .home__background {
+    animation-name: background-canvas-animations;
+    animation-delay: $duration - ($background-duration);
+    animation-duration: $background-duration;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+
+  .home__description {
+    animation-name: navigation-color;
+    animation-delay: $duration;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+  }
+
+  .home__navigation-item {
+    animation-name: navigation-color;
+    animation-delay: $duration;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+  }
+}
+
+.home-animation-enter-done {
+  #word-1 {
+    display: none;
+  }
+
+  #word-2 {
+    display: none;
+  }
+
+  #word-3 {
+    transform: translate3d(0, 0, 0);
+    border-radius: 0;
+    color: white;
+    opacity: 1;
+    background-color: transparent;
+    ._invisible {
+      color: white;
+    }
+  }
+
+  .home__animation {
+    background-color: transparent;
+    color: #FFFFFF;
+  }
+
+  .home__background {
+    opacity: 1;
+  }
+
+  .home__description {
+    opacity: 1;
+  }
+
+  .home__navigation-item {
+    opacity: 1;
+  }
+
+}
+
+@keyframes phrase-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes phrase-right {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(100%, 0, -100px);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.home-animation-exit {
+  animation-name: fade-out;
+  animation-delay: 700ms;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+
+  #word-1 {
+    display: none;
+  }
+
+  #word-2 {
+    display: none;
+  }
+
+  #word-3 {
+    transform: translate3d(0, 0, 0);
+    border-radius: 0;
+    color: white;
+    opacity: 1;
+    background-color: transparent;
+    ._invisible {
+      color: white;
+    }
+  }
+
+  .home__animation {
+    background-color: transparent;
+    color: #FFFFFF;
+  }
+
+  .home__background {
+    opacity: 1;
+  }
+
+  .home__description {
+    opacity: 1;
+  }
+
+  .home__navigation-item {
+    opacity: 1;
+  }
+
+  #phrase-1 {
+    animation-name: phrase-left;
+    animation-delay: 0ms;
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(.58,-0.18,.97,.71);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+
+  #phrase-2 {
+    animation-name: phrase-right;
+    animation-delay: 300ms;
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(.58,-0.18,.97,.71);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+
+  #phrase-3 {
+    animation-name: phrase-left;
+    animation-delay: 700ms;
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(.58,-0.18,.97,.71);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+
+  .home__description {
+    animation-name: fade-out;
+    animation-delay: 300ms;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+
+  .home__header {
+    animation-name: fade-out;
+    animation-delay: 500ms;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+}
+
+.home {
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+  position: relative;
+  height: 100vh;
+
+  background: linear-gradient(45deg, #9900ff 0%, #ff4fa7 50%, #ffbb00 100%);
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.home__animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+
+  will-change: background-color, color;
+}
+
+.home__word {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 124px;
+
+  @media screen and (max-width: 645px) {
+    font-size: 65px;
+  }
+
+  @media screen and (max-height: 540px) {
+    font-size: 65px;
+  }
+
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  will-change: transform, border-radius, background-color;
+}
+
+.home__phrase ._invisible {
+  color: transparent;
+}
+
+.home__background {
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  transform: translate3d(0, 0, 0);
+
+  position: absolute;
+  top: 0;
+
+  will-change: opacity;
+}
+
+.home__description {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  color: #DDD;
+
+  will-change: opacity;
+
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.home__header {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.home__navigation {
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  font-size: 22px;
+}
+
+.home__navigation-item {
+  margin: 0 27px;
+  padding-bottom: 6px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  color: #FFFFFF;
+
+  will-change: opacity, padding-bottom;
+
+  transition: padding-bottom ease-in-out 70ms;
+
+  &:hover, &:focus {
+    padding-bottom: 16px;
+  }
+}

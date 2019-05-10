@@ -22,11 +22,129 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Sharadbrat</title>
+
+    <style>
+      /*
+
+        todo: do something with critical css
+
+      */
+
+      .loader-container {
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        background-color: white;
+
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        transition: visibility ease-in-out 300ms, opacity ease-in-out 300ms, z-index ease 300ms, transform ease-out 300ms;
+      }
+
+      .loader-container_hidden {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1000;
+        transform: scale(3);
+      }
+
+      .loader__icon {
+        width: 40px;
+        height: 40px;
+        margin: 100px auto;
+      }
+
+      .loader__icon-element {
+        width: 33%;
+        height: 33%;
+        background-color: rgba(0, 0, 0, 0.5);
+        float: left;
+        animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+      }
+
+      .loader__icon-element-1 {
+        animation-delay: 0.2s;
+      }
+
+      .loader__icon-element-2 {
+        animation-delay: 0.3s;
+      }
+
+      .loader__icon-element-3 {
+        animation-delay: 0.4s;
+      }
+
+
+      .loader__icon-element-4 {
+        animation-delay: 0.1s;
+      }
+
+      .loader__icon-element-5 {
+        animation-delay: 0.2s;
+      }
+
+
+      .loader__icon-element-6 {
+        animation-delay: 0.3s;
+      }
+
+      .loader__icon-element-7 {
+        animation-delay: 0s;
+      }
+
+      .loader__icon-element-8 {
+        animation-delay: 0.1s;
+      }
+
+      .loader__icon-element-9 {
+        animation-delay: 0.2s;
+      }
+
+      @keyframes sk-cubeGridScaleDelay {
+        0%, 70%, 100% {
+          -webkit-transform: scale3D(1, 1, 1);
+          transform: scale3D(1, 1, 1);
+        } 35% {
+            -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+          }
+      }
+
+      .noscript {
+
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript class="noscript">You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <!-- Loading spinner for application -->
+    <div class="loader-container" id="loader-container">
+      <div class="loader">
+        <div class="loader__icon">
+          <div class="loader__icon-element loader__icon-element-1"></div>
+          <div class="loader__icon-element loader__icon-element-2"></div>
+          <div class="loader__icon-element loader__icon-element-3"></div>
+          <div class="loader__icon-element loader__icon-element-4"></div>
+          <div class="loader__icon-element loader__icon-element-5"></div>
+          <div class="loader__icon-element loader__icon-element-6"></div>
+          <div class="loader__icon-element loader__icon-element-7"></div>
+          <div class="loader__icon-element loader__icon-element-8"></div>
+          <div class="loader__icon-element loader__icon-element-9"></div>
+        </div>
+      </div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
