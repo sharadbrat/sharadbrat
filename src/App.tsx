@@ -16,7 +16,7 @@ class App extends Component {
           <Route component={About} path="/about"/>
           <Route component={Blog} path="/blog"/>
           <Route component={Demos} path="/demos"/>
-          <Route component={Article} path="/article"/>
+          <Route component={Article} path="/article/:id"/>
         </BrowserRouter>
       </React.Fragment>
     );

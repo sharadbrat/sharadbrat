@@ -3,6 +3,7 @@ import * as firebase from 'firebase';
 export abstract class FirebaseService {
 
   private static db: firebase.firestore.Firestore;
+  private static storage: firebase.storage.Storage;
   private static app: firebase.app.App;
 
   private static initialize() {
@@ -17,6 +18,7 @@ export abstract class FirebaseService {
     });
 
     FirebaseService.db = FirebaseService.app.firestore();
+    FirebaseService.storage = FirebaseService.app.storage();
   }
 
   public static getFirestore(): firebase.firestore.Firestore {
@@ -25,5 +27,13 @@ export abstract class FirebaseService {
     }
 
     return FirebaseService.db;
+  }
+
+  public static getStorage(): firebase.storage.Storage {
+    if (!FirebaseService.app) {
+      FirebaseService.initialize();
+    }
+
+    return FirebaseService.storage;
   }
 }

@@ -10,7 +10,7 @@
 }
 
 .blog-article__heading {
-  @include typography-heading-medium();
+  @include TypographyHeadingMedium();
 
   display: block;
   margin-bottom: 4px;
@@ -22,7 +22,7 @@
 }
 
 .blog-article__time {
-  @include typography-caption();
+  @include TypographyCaption();
   display: block;
   font-family: sans-serif;
   margin-bottom: 20px;
@@ -30,7 +30,7 @@
 }
 
 .blog-article__description {
-  @include typography-paragraph();
+  @include TypographyParagraph();
 
   display: block;
   font-family: sans-serif;
@@ -42,7 +42,7 @@
 }
 
 .blog-article__link {
-  @include typography-link();
+  @include TypographyLink();
 
   display: block;
   width: fit-content;
@@ -62,5 +62,25 @@
 
   &:focus, &:hover {
     box-shadow: 0 5px 0 0 white, 0 8px 0 0 $color-palette-light-blue;
+  }
+}
+
+@keyframes blog-article-animation-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.blog-article-animation-enter {
+
+  &.blog-article {
+    animation-name: blog-article-animation-in;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
   }
 }

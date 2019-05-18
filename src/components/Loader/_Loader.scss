@@ -1,3 +1,5 @@
+@import "../../style/typography";
+
 .loader__icon {
   width: 40px;
   height: 40px;
@@ -10,6 +12,12 @@
   background-color: rgba(0, 0, 0, 0.5);
   float: left;
   animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+
+.loader__caption {
+  @include TypographyInterface();
+  font-family: sans-serif;
+  font-size: 24px;
 }
 
 .loader__icon-element-1 {

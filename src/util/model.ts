@@ -13,13 +13,16 @@ export interface BlogArticleModel {
   description: string;
   timestamp: number;
   contentId?: string;
-  file?: File;
+  fileUrl?: string;
+  file?: string;
 }
 
 export class DemoModel {
+  id: string;
   title: string;
   description: string;
-  img: any;
+  url: string;
+  timestamp: number;
 }
 
 export interface INavigationItem {

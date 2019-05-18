@@ -168,6 +168,9 @@ $header-height: 64px;
   @include CuteButton($color-palette-purple, $color-light-text-primary);
 }
 
+.blog__navigation-item._Blog {
+  @include CuteButton($color-palette-purple, $color-light-text-primary);
+}
 // Animation
 
 @keyframes blog-header-in {
@@ -236,6 +239,11 @@ $header-height: 64px;
     &._About {
       animation-delay: $first-link-delay + 175ms + 25ms;
       animation-duration: 150ms;
+    }
+
+    &._Blog {
+      animation-delay: $first-link-delay + 75ms + 25ms;
+      animation-duration: 225ms;
     }
   }
 }
