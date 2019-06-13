@@ -11,13 +11,15 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-transition-group": "^2.9.0",
+    "showdown": "^1.9.0",
     "styled-components": "^4.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "convert": "node markdown-to-html.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,6 +38,8 @@
     "@types/react-helmet": "^5.0.8",
     "@types/react-router-dom": "^4.3.1",
     "@types/react-transition-group": "^2.8.0",
-    "typescript": "^3.4.2"
+    "@types/showdown": "^1.9.3",
+    "typescript": "^3.4.2",
+    "yargs": "^13.2.4"
   }
 }
