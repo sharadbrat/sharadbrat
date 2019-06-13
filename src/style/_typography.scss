@@ -1,4 +1,5 @@
 @import "variables";
+@import "media";
 
 $font-fallback: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
@@ -25,6 +26,10 @@ $font-fallback: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvet
   line-height: 4rem;
   font-size: 4rem;
   font-weight: 100;
+
+  @include MediaMobile() {
+    font-size: 2.5rem;
+  }
 }
 
 @mixin TypographyHeadingMedium() {
@@ -33,6 +38,10 @@ $font-fallback: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvet
   line-height: 3rem;
   font-size: 3rem;
   font-weight: 300;
+
+  @include MediaMobile() {
+    font-size: 2rem;
+  }
 }
 
 @mixin TypographyHeadingSmall() {
@@ -41,6 +50,10 @@ $font-fallback: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvet
   line-height: 2rem;
   font-size: 2rem;
   font-weight: 300;
+
+  @include MediaMobile() {
+    font-size: 1.5rem;
+  }
 }
 
 @mixin TypographyHeadingTiny() {
