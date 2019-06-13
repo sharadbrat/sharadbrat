@@ -15,9 +15,8 @@
 }
 
 .loader__caption {
-  @include TypographyInterface();
-  font-family: sans-serif;
-  font-size: 24px;
+  @include TypographyCaption();
+  text-align: center;
 }
 
 .loader__icon-element-1 {

@@ -21,7 +21,7 @@
 
 .blog__navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   height: calc(100% - 5px);
   max-width: 320px;
   margin-left: auto;
@@ -150,10 +150,6 @@
   @include CuteButton($color-palette-blue, $color-light-text-primary);
 }
 
-.blog__navigation-item._Demos {
-  @include CuteButton($color-palette-purple, $color-light-text-primary);
-}
-
 .blog__navigation-item._Blog {
   @include CuteButton($color-palette-purple, $color-light-text-primary);
 }
@@ -210,11 +206,6 @@
       animation-duration: 300ms;
     }
 
-    &._Demos {
-      animation-delay: $first-link-delay + 75ms + 25ms;
-      animation-duration: 225ms;
-    }
-
     &._About {
       animation-delay: $first-link-delay + 175ms + 25ms;
       animation-duration: 150ms;
@@ -256,11 +247,6 @@
     animation-direction: reverse;
 
     &._Home {
-      animation-delay: 125ms;
-      animation-duration: 150ms;
-    }
-
-    &._Demos {
       animation-delay: 75ms;
       animation-duration: 150ms;
     }

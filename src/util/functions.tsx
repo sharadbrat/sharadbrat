@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import { About, Blog, Demos, Home } from '../pages';
+import { About, Blog, Home } from '../pages';
 import { INavigationItem } from './model';
 
 export function getNavigationItems(): INavigationItem[] {
@@ -17,12 +17,6 @@ export function getNavigationItems(): INavigationItem[] {
       url: '/blog',
       exact: true,
       component: Blog,
-    },
-    {
-      name: 'Demos',
-      url: '/demos',
-      exact: true,
-      component: Demos,
     },
     {
       name: 'About',

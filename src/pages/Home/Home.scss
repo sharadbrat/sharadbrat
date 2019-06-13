@@ -1,3 +1,5 @@
+@import "../../style/typography";
+
 @mixin word-animation($translateX, $name) {
   @keyframes word-animation-#{$name} {
     $base: -100vw;
@@ -302,7 +304,6 @@ $background-duration: 1s;
 }
 
 .home {
-  font-family: "Raleway", sans-serif;
   font-weight: 200;
   position: relative;
   height: 100vh;
@@ -322,17 +323,18 @@ $background-duration: 1s;
 }
 
 .home__word {
+  @include FontHeading();
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: 124px;
 
   @media screen and (max-width: 645px) {
-    font-size: 65px;
+    font-size: 52px;
   }
 
   @media screen and (max-height: 540px) {
-    font-size: 65px;
+    font-size: 52px;
   }
 
   background-color: rgba(0, 0, 0, 0.1);
@@ -364,6 +366,7 @@ $background-duration: 1s;
 }
 
 .home__description {
+  @include TypographyInterface();
   position: absolute;
   z-index: 1;
   top: 0;
@@ -380,13 +383,13 @@ $background-duration: 1s;
   padding-left: 15px;
   padding-right: 15px;
 
-  color: #DDD;
+  color: white;
 
   will-change: opacity;
 
   text-align: center;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .home__header {
@@ -397,7 +400,6 @@ $background-duration: 1s;
 }
 
 .home__navigation {
-  font-family: "Raleway", sans-serif;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -407,6 +409,7 @@ $background-duration: 1s;
 }
 
 .home__navigation-item {
+  @include TypographyInterface();
   margin: 0 27px;
   padding-bottom: 6px;
   text-decoration: none;

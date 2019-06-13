@@ -13,8 +13,7 @@ export interface BlogArticleModel {
   description: string;
   timestamp: number;
   contentId?: string;
-  fileUrl?: string;
-  file?: string;
+  text: string;
 }
 
 export class DemoModel {

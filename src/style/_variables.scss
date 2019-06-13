@@ -3,6 +3,7 @@ $color-palette-indigo: #3949ab !default;
 $color-palette-blue: #1e88e5 !default;
 $color-palette-light-blue: #42a5f5 !default;
 $color-palette-pink: #e91e63 !default;
+$color-palette-hacker-green: #2e7d32 !default;
 
 $color-dark-text-primary: #212121 !default;
 $color-dark-text-secondary: #616161 !default;
@@ -14,3 +15,14 @@ $margin-block: 32px;
 $margin-element: 24px;
 $margin-inner-element: 12px;
 $margin-atom: 8px;
+
+
+$media-small-screen: 600px !default;
+$media-small-screen-up: 601px !default;
+$media-medium-screen: 992px !default;
+$media-medium-screen-up: 993px !default;
+$media-large-screen: 1200px !default;
+$media-large-screen-up: 1201px !default;
+
+$header-height: 64px !default;
+$header-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 0 21px -5px rgba(0, 0, 0, 0.05) !default;

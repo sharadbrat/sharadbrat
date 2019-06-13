@@ -11,12 +11,10 @@
 
 .blog-article__heading {
   @include TypographyHeadingMedium();
-
   display: block;
   margin-bottom: 4px;
   font-size: 24px;
   max-width: fit-content;
-  font-family: Raleway, sans-serif;
   font-weight: 600;
   letter-spacing: 2px;
 }
@@ -24,7 +22,6 @@
 .blog-article__time {
   @include TypographyCaption();
   display: block;
-  font-family: sans-serif;
   margin-bottom: 20px;
   color: $color-dark-text-secondary;
 }
@@ -33,7 +30,6 @@
   @include TypographyParagraph();
 
   display: block;
-  font-family: sans-serif;
   margin-bottom: 8px;
   line-height: 1.2;
   font-weight: 200;
@@ -49,10 +45,8 @@
   padding: 5px;
   margin-left: auto;
 
-  color: $color-palette-light-blue;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: Raleway, sans-serif;
   font-weight: 700;
   text-decoration: none;
 
@@ -62,6 +56,10 @@
 
   &:focus, &:hover {
     box-shadow: 0 5px 0 0 white, 0 8px 0 0 $color-palette-light-blue;
+  }
+
+  &:visited {
+    color: $color-palette-light-blue;
   }
 }
 

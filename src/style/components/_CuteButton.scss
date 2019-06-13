@@ -1,6 +1,7 @@
-
+@import "../typography";
 
 @mixin CuteButton($color, $color-text) {
+  @include TypographyInterface();
   $color-lighten: lighten($color, 10%);
   $color-darken: darken($color, 10%);
 
@@ -27,7 +28,6 @@
   border: none;
   apperance: none;
 
-  font-family: sans-serif;
   font-size: 16px;
   text-decoration: none;
   text-align: center;

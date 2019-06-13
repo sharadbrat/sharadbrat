@@ -17,7 +17,7 @@ export class Loader extends React.Component {
           <div className="loader__icon-element loader__icon-element-8"/>
           <div className="loader__icon-element loader__icon-element-9"/>
         </div>
-        <span className="loader__caption">Loading content for you</span>
+        <span className="loader__caption">Delivering happiness...</span>
       </div>
     );
   }
