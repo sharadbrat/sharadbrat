@@ -1,6 +1,7 @@
 @import "../../style/typography";
 @import "../../style/variables";
 @import "../../style/mixin";
+@import "../../style/media";
 
 .article {
 
@@ -45,56 +46,84 @@
 }
 
 .article__heading {
-  @include TypographyHeadingMedium();
+  @include TypographyHeadingSmall();
   @include content-container();
-  margin-top: $header-height + $margin-block;
-  margin-left: 15px;
+  padding-right: 48px;
+
+  @include MediaMobile() {
+    padding-right: 0;
+  }
 }
 
 .article__main {
   @include content-container();
+  margin-top: $header-height + $margin-inner-element;
   padding: 15px;
 
   h1 {
     @include TypographyHeadingLarge();
     margin-top: $margin-block;
     margin-bottom: $margin-element;
+    code {
+      padding: .4em .8em;
+      line-height: 2rem;
+    }
   }
 
   h2 {
     @include TypographyHeadingMedium();
-    margin-top: $margin-element;
-    margin-bottom: $margin-inner-element;
+    margin-top: $margin-block;
+    margin-bottom: $margin-element;
+    code {
+      padding: .4em .8em;
+      line-height: 2rem;
+    }
   }
 
   h3 {
     @include TypographyHeadingSmall();
-    margin-top: $margin-element;
-    margin-bottom: $margin-inner-element;
+    margin-top: $margin-block;
+    margin-bottom: $margin-element;
+    code {
+      padding: .4em .8em;
+      line-height: 2rem;
+    }
   }
 
   h4 {
-    @include TypographyHeadingSmall();
-    margin-top: $margin-element;
-    margin-bottom: $margin-inner-element;
+    @include TypographyHeadingTiny();
+    margin-top: $margin-block;
+    margin-bottom: $margin-element;
+    code {
+      padding: .4em .8em;
+      line-height: 2rem;
+    }
   }
 
   h5 {
-    @include TypographyHeadingSmall();
-    margin-top: $margin-element;
-    margin-bottom: $margin-inner-element;
+    @include TypographyHeadingTiny();
+    margin-top: $margin-block;
+    margin-bottom: $margin-element;
+    code {
+      padding: .4em .8em;
+      line-height: 2rem;
+    }
   }
 
   h6 {
-    @include TypographyHeadingSmall();
-    margin-top: $margin-element;
-    margin-bottom: $margin-inner-element;
+    @include TypographyHeadingTiny();
+    margin-top: $margin-block;
+    margin-bottom: $margin-element;
+    code {
+      padding: .4em .8em;
+      line-height: 2rem;
+    }
   }
 
   p {
     @include TypographyParagraph();
-    margin-top: $margin-atom;
-    margin-bottom: $margin-atom;
+    margin-top: $margin-inner-element;
+    margin-bottom: $margin-inner-element;
   }
 
   a {
@@ -102,8 +131,12 @@
   }
 
   code {
-    @include TypographyCaption();
-    color: $color-palette-hacker-green;
-    text-decoration: underline rgba(#2e7d32, 0.5);
+    color: $color-dark-text-primary;
+    font-size: 16px;
+    background-color: rgba(27,31,35,.05);
+    border-radius: 3px;
+    margin: 0;
+    padding: .2em .4em;
+    font-family: monospace;
   }
 }

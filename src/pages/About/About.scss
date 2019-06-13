@@ -1,0 +1,205 @@
+@import "../../style/typography";
+@import "../../style/mixin";
+@import "../../style/variables";
+
+.about {
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url('../../assets/trianglify.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.about__container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.about__header {
+  background-color: white;
+  flex-shrink: 0;
+  width: 100%;
+  height: $header-height;
+  box-shadow: $header-box-shadow;
+}
+
+.about__navigation {
+  display: flex;
+  justify-content: center;
+  height: calc(100% - 5px);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+.about__navigation-item {
+  @include TypographyInterface();
+  @include FontHeading();
+
+  font-weight: 100;
+  display: block;
+  color: $color-palette-blue;
+  margin: 0 $margin-element;
+
+  padding-bottom: 6px;
+  text-decoration: none;
+  border-bottom: 1px solid $color-palette-blue;
+
+  will-change: padding-bottom;
+
+  transition: padding-bottom ease-in-out 70ms;
+
+  &:hover, &:focus {
+    padding-bottom: 16px;
+  }
+}
+
+.about__main {
+  @include content-container();
+  flex-grow: 1;
+  padding: $margin-block * 2 10px;
+  color: $color-light-text-primary;
+  width: 100%;
+
+  h1 {
+    @include TypographyHeadingMedium();
+    margin-top: $margin-block;
+    margin-bottom: $margin-element;
+    color: $color-light-text-primary;
+    text-align: center;
+  }
+
+  h2 {
+    @include TypographyHeadingSmall();
+    margin-top: $margin-element;
+    margin-bottom: $margin-inner-element;
+    color: $color-light-text-primary;
+  }
+
+  p {
+    @include TypographyParagraph();
+    margin-top: $margin-atom;
+    margin-bottom: $margin-atom;
+    color: $color-light-text-primary;
+    text-shadow: 0px 0px 5px rgba($color-dark-text-primary, 0.5);
+  }
+
+  ul {
+    @include TypographyParagraph();
+    margin-top: $margin-atom;
+    margin-bottom: $margin-element;
+    color: $color-light-text-primary;
+    text-shadow: 0px 0px 5px rgba($color-dark-text-primary, 0.5);
+
+    li {
+      list-style: disc inside;
+    }
+  }
+
+}
+
+@keyframes about-header-transition {
+  0% {
+    transform: translateY(-$header-height);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes about-opacity-transition {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes about-nav-item-transition {
+  0% {
+    padding-bottom: 48px;
+    opacity: 0;
+  }
+
+  100% {
+    padding-bottom: 6px;
+    opacity: 1;
+  }
+}
+
+.about-animation-enter {
+  &.about {
+    animation-name: about-opacity-transition;
+    animation-duration: 300ms;
+    animation-delay: 0ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+  }
+
+  .about__header {
+    animation-name: about-header-transition;
+    animation-delay: 200ms;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+  }
+
+  .about__navigation-item {
+    animation-name: about-nav-item-transition;
+    animation-delay: 500ms;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+  }
+
+  .about__navigation-item:nth-child(2) {
+    animation-delay: 700ms;
+    animation-duration: 300ms;
+  }
+
+  .about__main {
+    animation-name: about-opacity-transition;
+    animation-delay: 700ms;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+  }
+}
+
+.about-animation-exit {
+  &.about {
+    animation-name: about-opacity-transition;
+    animation-delay: 700ms;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-direction: reverse;
+  }
+
+  .about__header {
+    animation-name: about-header-transition;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-direction: reverse;
+  }
+
+  .about__main {
+    animation-name: about-opacity-transition;
+    animation-delay: 200ms;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-direction: reverse;
+  }
+}
