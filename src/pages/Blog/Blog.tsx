@@ -33,7 +33,7 @@ export class Blog extends React.Component<any, BlogState> {
   }
 
   componentDidMount(): void {
-    ArticleService.getArticlePreviewsCached()
+    ArticleService.getArticles()
       .then(articles => {
         this.setState({ articles, status: ResourceStatus.READY });
       })
@@ -67,7 +67,7 @@ export class Blog extends React.Component<any, BlogState> {
         articles = <div className="blog__placeholder-container"><Loader/></div>;
         break;
       case ResourceStatus.READY:
-        articles = <div className="blog__articles">{this.state.articles.map(article => <BlogArticle key={article.id} article={article}/>)}</div>;
+        articles = <div className="blog__articles">{this.state.articles.map(article => <BlogArticle key={article.id} article={article} onNavigate={this.onUrlClick}/>)}</div>;
         break;
     }
 

@@ -1,8 +1,6 @@
 @import "../../style/variables";
+@import "../../style/typography";
 @import "../../style/components/CuteButton";
-
-$header-height: 64px;
-
 
 .blog {
   display: flex;
@@ -11,11 +9,14 @@ $header-height: 64px;
 }
 
 .blog__header {
+  background-color: white;
+  z-index: 1000;
+  position: fixed;
   flex-shrink: 0;
   width: 100%;
   height: $header-height;
 
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 0 21px -5px rgba(0, 0, 0, 0.05);
+  box-shadow: $header-box-shadow;
 }
 
 .blog__navigation {
@@ -30,6 +31,7 @@ $header-height: 64px;
 
 
 .blog__main {
+  margin-top: $header-height;
   display: flex;
   flex-direction: column;
 
@@ -44,7 +46,7 @@ $header-height: 64px;
 }
 
 .blog__heading {
-  font-family: Raleway;
+  @include TypographyHeadingLarge();
   margin-top: 32px;
   margin-bottom: 48px;
   text-align: center;
@@ -53,26 +55,12 @@ $header-height: 64px;
 }
 
 .blog__description {
+  @include TypographyParagraph();
   letter-spacing: 1px;
   line-height: 1.5;
-  font-family: sans-serif;
   font-weight: 400;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding-bottom: 24px;
-
-  text-align: justify;
-  hyphens: auto;
-  hyphenate-limit-chars: 6 3 3;
-  hyphenate-limit-lines: 2;
-  hyphenate-limit-last: always;
-  hyphenate-limit-zone: 8%;
-}
-
-.blog__subheading {
-  font-family: Raleway, sans-serif;
-  margin-top: 32px;
-  font-size: 32px;
-  font-weight: 100;
 }
 
 .blog__articles {
@@ -109,10 +97,8 @@ $header-height: 64px;
 }
 
 .blog__footer-heading {
+  @include TypographyHeadingSmall();
   margin-bottom: 32px;
-  font-size: 16px;
-  font-family: Raleway, sans-serif;
-  font-weight: 600;
   text-align: center;
 }
 
@@ -196,12 +182,6 @@ $header-height: 64px;
 .blog-animation-enter {
 
   .blog__header {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
     animation-name: blog-header-in;
     animation-delay: 200ms;
     animation-duration: 100ms;
@@ -215,7 +195,6 @@ $header-height: 64px;
     animation-duration: 600ms;
     animation-timing-function: ease-in;
     animation-fill-mode: both;
-    margin-top: $header-height;
   }
 
   .blog__navigation-item {
@@ -251,10 +230,6 @@ $header-height: 64px;
 .blog-animation-exit {
 
   .blog__header {
-    position: absolute;
-    top: 0;
-    left: 0;
-
     width: 100%;
 
     animation-name: blog-header-in;
@@ -271,7 +246,6 @@ $header-height: 64px;
     animation-duration: 425ms;
     animation-timing-function: ease-in;
     animation-fill-mode: both;
-    margin-top: $header-height;
     animation-direction: reverse;
   }
 
