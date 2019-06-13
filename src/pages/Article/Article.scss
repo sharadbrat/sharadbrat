@@ -1,0 +1,109 @@
+@import "../../style/typography";
+@import "../../style/variables";
+@import "../../style/mixin";
+
+.article {
+
+}
+
+.article__loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.article__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: $header-height;
+  box-shadow: $header-box-shadow;
+  width: 100vw;
+  background-color: white;
+}
+
+.article__header-container {
+  @include content-container();
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.article__header-back {
+  flex-shrink: 0;
+  display: block;
+  height: 48px;
+  width: 48px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('/assets/image/back.svg');
+  background-size: 32px;
+}
+
+.article__heading {
+  @include TypographyHeadingMedium();
+  @include content-container();
+  margin-top: $header-height + $margin-block;
+  margin-left: 15px;
+}
+
+.article__main {
+  @include content-container();
+  padding: 15px;
+
+  h1 {
+    @include TypographyHeadingLarge();
+    margin-top: $margin-block;
+    margin-bottom: $margin-element;
+  }
+
+  h2 {
+    @include TypographyHeadingMedium();
+    margin-top: $margin-element;
+    margin-bottom: $margin-inner-element;
+  }
+
+  h3 {
+    @include TypographyHeadingSmall();
+    margin-top: $margin-element;
+    margin-bottom: $margin-inner-element;
+  }
+
+  h4 {
+    @include TypographyHeadingSmall();
+    margin-top: $margin-element;
+    margin-bottom: $margin-inner-element;
+  }
+
+  h5 {
+    @include TypographyHeadingSmall();
+    margin-top: $margin-element;
+    margin-bottom: $margin-inner-element;
+  }
+
+  h6 {
+    @include TypographyHeadingSmall();
+    margin-top: $margin-element;
+    margin-bottom: $margin-inner-element;
+  }
+
+  p {
+    @include TypographyParagraph();
+    margin-top: $margin-atom;
+    margin-bottom: $margin-atom;
+  }
+
+  a {
+    @include TypographyLink();
+  }
+
+  code {
+    @include TypographyCaption();
+    color: $color-palette-hacker-green;
+    text-decoration: underline rgba(#2e7d32, 0.5);
+  }
+}
