@@ -13,9 +13,14 @@
   @include TypographyHeadingMedium();
   display: block;
   margin-bottom: 4px;
+  font-size: 24px;
   max-width: fit-content;
   font-weight: 600;
   letter-spacing: 2px;
+
+  @include MediaMobile() {
+    font-size: 24px;
+  }
 }
 
 .blog-article__time {

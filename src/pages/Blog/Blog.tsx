@@ -82,7 +82,7 @@ export class Blog extends React.Component<any, BlogState> {
           <div className="blog__fade">
             <main className="blog__main">
               <h1 className="blog__heading">My personal blog</h1>
-              <p className="blog__description">Here you can find all my articles that are related to the frontend stuff and IT world in general. All the articles are published in medium, so if you have some preferences to the particular article platform, find medium link for the article in the very beginning of the article itself.</p>
+              <p className="blog__description">Here you can find all my articles that are related to the frontend stuff and IT world in general.</p>
               { articles }
             </main>
             <Footer/>

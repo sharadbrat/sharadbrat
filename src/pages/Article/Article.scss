@@ -49,10 +49,6 @@
   @include TypographyHeadingSmall();
   @include content-container();
   padding-right: 48px;
-
-  @include MediaMobile() {
-    padding-right: 0;
-  }
 }
 
 .article__main {

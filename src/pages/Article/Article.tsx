@@ -35,7 +35,7 @@ export class Article extends React.Component<ArticleProps, ArticleState> {
           <header className="article__header">
             <div className="article__header-container">
               <Link to="/blog" className="article__header-back" aria-label="Go back"/>
-              <h1 className="article__heading">{this.state.article.title}</h1>
+              <h1 className="article__heading">Sharadbrat</h1>
             </div>
           </header>
           <main className="article__main" dangerouslySetInnerHTML={{__html: this.state.article.text}}/>

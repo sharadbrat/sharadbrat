@@ -70,7 +70,7 @@ export class About extends React.Component<any, AboutState> {
               <h2>What is this webpage for?</h2>
               <p>I just wanted to create a blog for myself.</p>
               <h2>Found a bug?</h2>
-              <p>Please, contact me in on of the links below, if you found a bug, I would really appreciate that. Thank you in advance.</p>
+              <p>Please, contact me in on of the links below, if you found a bug. I would really appreciate that. Thank you in advance.</p>
             </main>
             <Footer/>
           </div>
