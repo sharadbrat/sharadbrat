@@ -1,0 +1,61 @@
+@import "../../style/typography";
+
+.footer {
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 0 21px -5px rgba(0, 0, 0, 0.05);
+}
+
+.footer__container {
+}
+
+.footer__heading {
+  @include TypographyHeadingSmall();
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__link {
+  width: 32px;
+  height: 32px;
+  margin-left: 16px;
+  margin-right: 16px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: all ease-in-out 75ms;
+  will-change: transform, margin-left, margin-right;
+
+  &:hover, &:focus {
+    transform: scale(1.5);
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  &._twitter {
+    background-image: url('../../assets/logo_twitter.svg');
+  }
+
+  &._telegram {
+    background-image: url('../../assets/logo_telegram.svg');
+  }
+
+  &._github {
+    background-image: url('../../assets/logo_github.svg');
+  }
+
+  &._email {
+    background-image: url('../../assets/logo_email.svg');
+  }
+}
