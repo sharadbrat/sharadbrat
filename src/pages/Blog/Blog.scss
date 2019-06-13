@@ -80,18 +80,25 @@
   height: 100%;
   width: 100%;
   flex-grow: 1;
+
+  span {
+    @include TypographyCaption();
+  }
 }
 
 .blog__navigation-item._Home {
   @include CuteButton($color-palette-indigo, $color-light-text-primary);
+  margin: 0 $margin-inner-element;
 }
 
 .blog__navigation-item._About {
   @include CuteButton($color-palette-blue, $color-light-text-primary);
+  margin: 0 $margin-inner-element;
 }
 
 .blog__navigation-item._Blog {
   @include CuteButton($color-palette-purple, $color-light-text-primary);
+  margin: 0 $margin-inner-element;
 }
 // Animation
 
