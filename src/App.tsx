@@ -11,6 +11,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        <a id="page-start"/>
         <BrowserRouter>
           <Route component={Home} exact path="/"/>
           <Route component={About} path="/about"/>

@@ -22,6 +22,7 @@ export class Article extends React.Component<ArticleProps, ArticleState> {
 
   componentDidMount(): void {
     ArticleService.getArticle(this.props.match.params['id']).then(article => this.setState({article}));
+    location.hash = '#page-start';
   }
 
   render() {

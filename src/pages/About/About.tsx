@@ -22,6 +22,7 @@ export class About extends React.Component<any, AboutState> {
 
   componentDidMount(): void {
     this.setState({ isEntered: true });
+    location.hash = '#page-start';
   }
 
   onUrlClick = (url: string) => {

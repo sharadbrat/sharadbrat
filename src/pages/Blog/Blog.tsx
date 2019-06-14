@@ -33,6 +33,7 @@ export class Blog extends React.Component<any, BlogState> {
   }
 
   componentDidMount(): void {
+    location.hash = '#page-start';
     ArticleService.getArticles()
       .then(articles => {
         this.setState({ articles, status: ResourceStatus.READY });
