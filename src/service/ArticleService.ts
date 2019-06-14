@@ -10,6 +10,7 @@ export abstract class ArticleService {
   public static getArticles(): Promise<BlogArticleModel[]> {
     return FirebaseService.getFirestore()
       .collection('articles')
+      .where('timestamp', '<=', new Date())
       .orderBy('timestamp', 'desc')
       .get()
       .then(querySnapshot => ArticleService.mapArticles(querySnapshot));
