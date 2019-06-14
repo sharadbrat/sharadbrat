@@ -8,6 +8,7 @@
 }
 
 .article__loader {
+  @include TypographyCaption();
   display: flex;
   justify-content: center;
   align-items: center;

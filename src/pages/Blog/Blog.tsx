@@ -39,7 +39,11 @@ export class Blog extends React.Component<any, BlogState> {
         this.setState({ articles, status: ResourceStatus.READY });
       })
       .catch(error => {
-        this.setState({ status: ResourceStatus.CONNECTION_ERROR });
+        if (error && error.code) {
+          this.setState({ status: ResourceStatus.ERROR });
+        } else {
+          this.setState({ status: ResourceStatus.CONNECTION_ERROR });
+        }
       });
 
     this.setState({ isEntered: true });
