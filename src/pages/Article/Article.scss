@@ -137,3 +137,28 @@
     font-family: monospace;
   }
 }
+
+.article__footer {
+  margin-bottom: $margin-element;
+  padding-top: $margin-element;
+  padding-right: 15px;
+  padding-left: 15px;
+  max-width: 600px;
+  width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border-top: 1px solid rgba(0,0,0,0.4);
+}
+
+.article__footer-title {
+  @include TypographyInterface();
+  display: block;
+}
+
+.article__footer-date {
+  margin-top: $margin-inner-element;
+  @include TypographyCaption();
+  display: block;
+}

@@ -38,7 +38,6 @@ export class Article extends React.Component<ArticleProps, ArticleState> {
 
   render() {
 
-
     let article;
 
     switch (this.state.status) {
@@ -52,6 +51,8 @@ export class Article extends React.Component<ArticleProps, ArticleState> {
         article = <div className="article__loader"><Loader/></div>;
         break;
       case ResourceStatus.READY:
+        const time = new Date(this.state.article.timestamp).toLocaleDateString();
+
         article = (
           <React.Fragment>
             <header className="article__header">
@@ -61,6 +62,10 @@ export class Article extends React.Component<ArticleProps, ArticleState> {
               </div>
             </header>
             <main className="article__main" dangerouslySetInnerHTML={{__html: this.state.article.text}}/>
+            <footer className="article__footer">
+              <span className="article__footer-title">Published on:</span>
+              <span className="article__footer-date">{time}</span>
+            </footer>
           </React.Fragment>
         );
         break;
