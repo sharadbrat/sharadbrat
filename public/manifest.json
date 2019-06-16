@@ -53,10 +53,10 @@
       "type": "image/png"
     }
   ],
-  "start_url": "https://sharadbrat.com/",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "prefer_related_applications": "false"
+  "prefer_related_applications": false
 }
