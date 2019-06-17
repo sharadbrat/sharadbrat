@@ -41,7 +41,7 @@ export class Home extends React.Component {
     return (
       <CSSTransition timeout={4000} in={this.state.isEntered} classNames={'home-animation'}>
         <section className="home">
-          <p className="home__description">Emojinarium of Georgii&nbsp;Sharadze</p>
+          <h1 className="home__description">Emojinarium of Georgii&nbsp;Sharadze</h1>
 
           <div className="home__animation">
             <div className="home__background"/>

@@ -84,7 +84,7 @@ $font-fallback: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvet
   @include FontParagraph();
   font-size: 1rem;
   line-height: 1.5;
-  color: $color-palette-light-blue;
+  color: $color-palette-blue;
   &:visited {
     color: $color-palette-purple;
   }

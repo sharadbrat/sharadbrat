@@ -54,16 +54,16 @@
   font-weight: 700;
   text-decoration: none;
 
-  box-shadow: 0 0 0 0 white, 0 3px 0 0 $color-palette-light-blue;
+  box-shadow: 0 0 0 0 white, 0 3px 0 0 $color-palette-blue;
   transition: box-shadow ease-in-out 70ms;
   will-change: box-shadow;
 
   &:focus, &:hover {
-    box-shadow: 0 5px 0 0 white, 0 8px 0 0 $color-palette-light-blue;
+    box-shadow: 0 5px 0 0 white, 0 8px 0 0 $color-palette-blue;
   }
 
   &:visited {
-    color: $color-palette-light-blue;
+    color: $color-palette-blue;
   }
 }
 
