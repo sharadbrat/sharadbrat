@@ -7,45 +7,45 @@
     $border-radius: 70px;
 
     0% {
-      transform: translate3d($base, $translateY, 0) rotateX(30deg) rotateY(45deg) scale(0.7);
+      transform: translate3d($base, $translateY, 1000px) rotateX(30deg) rotateY(45deg) scale(0.7);
       animation-timing-function: ease-in-out;
       border-radius: $border-radius;
     }
 
     25% {
-      transform: translate3d($translateX, $translateY, 0) rotateX(30deg) rotateY(45deg) scale(0.7);
+      transform: translate3d($translateX, $translateY, 1000px) rotateX(30deg) rotateY(45deg) scale(0.7);
       border-radius: $border-radius;
     }
 
     33% {
-      transform: translate3d($translateX, $translateY, 0) rotateX(30deg) rotateY(45deg) scale(0.7);
+      transform: translate3d($translateX, $translateY, 1000px) rotateX(30deg) rotateY(45deg) scale(0.7);
       animation-timing-function: ease-out;
       border-radius: $border-radius;
     }
 
     43% {
-      transform: translate3d($translateX + $translateX / 8, $translateY, 0) rotateX(30deg) rotateY(45deg) scale(0.7);
+      transform: translate3d($translateX + $translateX / 8, $translateY, 1000px) rotateX(30deg) rotateY(45deg) scale(0.7);
       border-radius: $border-radius;
     }
 
     48% {
-      transform: translate3d(0, $translateY, 0) rotateX(30deg) rotateY(45deg) scale(0.7);
+      transform: translate3d(0, $translateY, 1000px) rotateX(30deg) rotateY(45deg) scale(0.7);
       border-radius: $border-radius;
     }
 
     54% {
-      transform: translate3d(0, $translateY, 0) rotateX(30deg) rotateY(45deg) scale(0.7);
+      transform: translate3d(0, $translateY, 1000px) rotateX(30deg) rotateY(45deg) scale(0.7);
       border-radius: $border-radius;
     }
 
     68% {
-      transform: translate3d(0, $translateY, 0) rotateX(0) rotateY(0) scale(0.7);
+      transform: translate3d(0, $translateY, 1000px) rotateX(0) rotateY(0) scale(0.7);
       animation-timing-function: ease-in-out;
       border-radius: $border-radius;
     }
 
     85% {
-      transform: translate3d(0, $translateY, 0) rotateX(0) rotateY(0) scale(1);
+      transform: translate3d(0, $translateY, 1000px) rotateX(0) rotateY(0) scale(1);
       border-radius: 0;
     }
   }
@@ -60,10 +60,12 @@
 @keyframes background-canvas-animations {
   0% {
     opacity: 0;
+    transform: translate3d(0,0,0) translateZ(-1000px);
   }
 
   100% {
     opacity: 1;
+    transform: translate3d(0,0,0) translateZ(0px);
   }
 }
 
@@ -328,6 +330,7 @@ $background-duration: 1s;
   flex-direction: column;
   justify-content: center;
   font-size: 124px;
+  z-index: 2000;
 
   @media screen and (max-width: 645px) {
     font-size: 52px;
@@ -357,18 +360,19 @@ $background-duration: 1s;
 
   background-color: rgba(0, 0, 0, 0.2);
 
-  transform: translate3d(0, 0, 0);
-
   position: absolute;
   top: 0;
 
   will-change: opacity;
+
+  transform: translate3d(0, 0, 0), translateY(-1000px);
+  z-index: 10;
 }
 
 .home__description {
   @include TypographyInterface();
   position: absolute;
-  z-index: 1;
+  z-index: 5000;
   top: 0;
 
   box-sizing: border-box;
@@ -395,7 +399,7 @@ $background-duration: 1s;
 .home__header {
   position: absolute;
   bottom: 0;
-  z-index: 1;
+  z-index: 5000;
   width: 100%;
 }
 
