@@ -136,6 +136,30 @@
     padding: .2em .4em;
     font-family: monospace;
   }
+
+  img {
+    width: 100%;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: $margin-block;
+    margin-bottom: $margin-block;
+  }
+
+  ul, ol {
+    @include TypographyParagraph();
+    margin-top: $margin-inner-element;
+    margin-bottom: $margin-inner-element;
+
+    li {
+      list-style: inside disc;
+    }
+  }
+
+  em {
+    font-style: italic;
+  }
 }
 
 .article__footer {

@@ -2,7 +2,7 @@
 Recently I’ve tried WordPress for one project. In this article I will share my experience related to implementation of the project, both positive and negative.
 
 ## Project description
-![Petanque](/articles/2/article-1-1.jpg)
+![Petanque](/articles/2/article-2-1.jpg)
 
 It was an outsource project which is basically a content website dedicated to Moscow Petanque Club. We worked in collaboration with UX/UI designer [Lara Sorokina](https://mobile.twitter.com/wid0ki) and project manager Dmitriy Silaev. So, the workflow can be represented as following: Dmitriy made the main communication with client, then Lara made up adaptive designs which suited needs and goals of the project.
 
@@ -18,9 +18,9 @@ In the end, we’ve got the designs for several pages:
 So, when I realized the scope of the project, what were the full requirements and details of the desired solution, I chose to use CMS with custom theme. For that purpose, WordPress perfectly fits.
 
 ## WordPress
-![WordPress](/articles/2/article-1-2.png)
+![WordPress](/articles/2/article-2-2.png)
 
-[WordPress](https://wordpress.org/) is an open-source CMS based on PHP. Firstly, I was thinking of taking [KeystoneJS](https://keystonejs.com/) as a CMS because it is based on technologies I personally prefer more - _node.js_ and javascript. But in fact, WordPress is the top 1 CMS on the market for over a decade already and it has best support in community. For me it was significant to develop a system that is manageable and scalable for further development and is comfortable to use by client. That is why WordPress is the best choice in this situation.
+[WordPress](https://wordpress.org/) is an open-source CMS based on PHP. Firstly, I was thinking of taking [KeystoneJS](https://keystonejs.com/) as a CMS because it is based on technologies I personally prefer more - node.js and javascript. But in fact, WordPress is the top 1 CMS on the market for over a decade already and it has best support in community. For me it was significant to develop a system that is manageable and scalable for further development and is comfortable to use by client. That is why WordPress is the best choice in this situation.
 
 The main problem with WordPress for me was absence of any experience of working in it at all. But thankfully to the platform, it is very easy to learn. There are couple of educational video-casts dedicated to WordPress in YouTube. Besides that, WordPress itself has powerful documentation.
 
@@ -34,7 +34,7 @@ So what I have done step-by-step is:
 Here is the link to the online version, which is now managed by customer:  [https://mospetanque.ru/](https://mospetanque.ru/)
 
 ## Why I liked WordPress
-![Thumb up](/articles/2/article-1-4.png)
+![Thumb up](/articles/2/article-2-4.png)
 
 Firstly, I enjoyed working with WordPress because of its simplicity. All I had to do is to download the archive with bundled engine, put it in my web server served directory and run the configuration process in my browser.
 
@@ -43,7 +43,7 @@ Of course, I’ve made personal development and production configurations, set u
 Secondly, I liked the plugins part of the engine. It is very easy to use and manipulate. It is literally just the click-based meta-programming. Install this, put this in the page and ta-da, fully customizable instagram feed including lazy- and eager- loading features, custom fallbacks, etc. Much of a pleasure to use that kind of service!
 
 ## Why I did not like it
-![Thumb down](/articles/2/article-1-3.png)
+![Thumb down](/articles/2/article-2-3.png)
 
 In my personal opinion, PHP is an outdated instrument. I mean, it’s useful for its own purposes, in 2005 when there are no other alternatives of dynamic website engine, but in 2019 there are a lot of different options, starting with simple spa and ending with SSR. As for now PHP should only be used with WordPress. Otherwise, it would be a progress-stopper.
 
