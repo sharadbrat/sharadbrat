@@ -31,6 +31,7 @@ So what I have done step-by-step is:
 4. Adjusted WordPress for object model of the project;
 5. Turned on the plugins for instagram feed, forms, custom fields for custom entities, etc;
 6. Modified the solution to fit in additional wishes of client.
+
 Here is the link to the online version, which is now managed by customer:  [https://mospetanque.ru/](https://mospetanque.ru/)
 
 ## Why I liked WordPress

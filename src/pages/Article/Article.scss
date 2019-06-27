@@ -147,13 +147,23 @@
     margin-bottom: $margin-block;
   }
 
-  ul, ol {
+  ul {
     @include TypographyParagraph();
     margin-top: $margin-inner-element;
     margin-bottom: $margin-inner-element;
 
     li {
       list-style: inside disc;
+    }
+  }
+
+  ol {
+    @include TypographyParagraph();
+    margin-top: $margin-inner-element;
+    margin-bottom: $margin-inner-element;
+
+    li {
+      list-style: inside decimal;
     }
   }
 
