@@ -121,6 +121,7 @@
     @include TypographyParagraph();
     margin-top: $margin-inner-element;
     margin-bottom: $margin-inner-element;
+    hyphens: none;
   }
 
   a {
@@ -151,7 +152,7 @@
     @include TypographyParagraph();
     margin-top: $margin-inner-element;
     margin-bottom: $margin-inner-element;
-
+    hyphens: none;
     li {
       list-style: inside disc;
     }
@@ -161,7 +162,7 @@
     @include TypographyParagraph();
     margin-top: $margin-inner-element;
     margin-bottom: $margin-inner-element;
-
+    hyphens: none;
     li {
       list-style: inside decimal;
     }
