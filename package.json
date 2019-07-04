@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "firebase": "^5.9.4",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -11,8 +10,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-transition-group": "^2.9.0",
-    "showdown": "^1.9.0",
-    "styled-components": "^4.2.0"
+    "showdown": "^1.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
