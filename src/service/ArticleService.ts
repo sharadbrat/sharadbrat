@@ -1,55 +1,58 @@
-import * as firebase from 'firebase';
-
-import { FirebaseService } from './FirebaseService';
 import { BlogArticleModel } from '../util';
+import showdown from 'showdown';
 
 export abstract class ArticleService {
 
-  // PUBLIC SECTION
-
   public static getArticles(): Promise<BlogArticleModel[]> {
-    return FirebaseService.getFirestore()
-      .collection('articles')
-      .where('timestamp', '<=', new Date())
-      .orderBy('timestamp', 'desc')
-      .get()
-      .then(querySnapshot => ArticleService.mapArticles(querySnapshot));
+    return Promise.resolve(ArticleService.articles);
   }
 
   public static getArticle(id: string): Promise<BlogArticleModel> {
-    return FirebaseService.getFirestore()
-      .collection('articles')
-      .doc(id)
-      .get()
-      .then(doc => ArticleService.mapArticle(doc));
+    const article = ArticleService.articles.find(el => el.id === id);
+    if (article) {
+      const promise = new Promise<BlogArticleModel>((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `/articles/${id}/content.md`, true);
+        xhr.onreadystatechange = () => {
+
+          if (xhr.readyState != 4) {
+            return;
+          }
+
+          if (xhr.status != 200) {
+            reject(new Error('Could not download content'));
+          } else {
+            try {
+              const md = xhr.responseText;
+              const converter = new showdown.Converter();
+              article.text = converter.makeHtml(md);
+              resolve(article);
+            } catch (e) {
+              reject(new Error('Could not parse markdown'));
+            }
+          }
+        };
+        xhr.send();
+      });
+      return promise;
+    } else {
+      return Promise.reject(new Error('Article not found'));
+    }
   }
 
-  // PRIVATE SECTION
-
-  private static mapArticles(querySnapshot: firebase.firestore.QuerySnapshot): BlogArticleModel[] {
-    return querySnapshot.docs.map(doc => {
-      const data = doc.data();
-
-      return {
-        id: doc.id,
-        title: data.title,
-        description: data.description,
-        timestamp: data.timestamp.toMillis(),
-        text: data.text,
-      };
-    });
-  }
-
-  private static mapArticle(doc: firebase.firestore.DocumentSnapshot): BlogArticleModel {
-    const data = doc.data();
-
-    return {
-      id: doc.id,
-      title: data.title,
-      description: data.description,
-      timestamp: data.timestamp.toMillis(),
-      text: data.text,
-    };
-  }
+  private static articles: BlogArticleModel[] = [
+    {
+      id: '2',
+      title: 'WordPress experience',
+      description: 'Recently I’ve tried Wordpress for one project. In this article I will share my experience related to implementation of the project, both positive and negative.',
+      timestamp: new Date(2019, 5, 27).getTime(),
+    },
+    {
+      id: '1',
+      title: 'My first article',
+      description: 'Now I have a blog and this is basically my first article in it. With it I would share my experience on building it up, my pains and the ways to overcome them.',
+      timestamp: new Date(2019, 5, 14).getTime(),
+    },
+  ];
 
 }

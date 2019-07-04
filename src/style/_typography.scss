@@ -29,6 +29,7 @@ $font-fallback: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvet
 
   @include MediaMobile() {
     font-size: 2.5rem;
+    line-height: 1.5;
   }
 }
 
@@ -41,6 +42,7 @@ $font-fallback: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvet
 
   @include MediaMobile() {
     font-size: 2rem;
+    line-height: 1.5;
   }
 }
 
@@ -53,6 +55,7 @@ $font-fallback: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvet
 
   @include MediaMobile() {
     font-size: 1.5rem;
+    line-height: 1.5;
   }
 }
 

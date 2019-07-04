@@ -4,7 +4,7 @@ Recently I’ve tried WordPress for one project. In this article I will share my
 ## Project description
 ![Petanque](/articles/2/article-2-1.jpg)
 
-It was an outsource project which is basically a content website dedicated to Moscow Petanque Club. We worked in collaboration with UX/UI designer [Lara Sorokina](https://mobile.twitter.com/wid0ki) and project manager Dmitriy Silaev. So, the workflow can be represented as following: Dmitriy made the main communication with client, then Lara made up adaptive designs which suited needs and goals of the project.
+It was a freelance project which is basically a content website dedicated to Moscow Petanque Club. We worked in collaboration with UX/UI designer [Lara Sorokina](https://mobile.twitter.com/wid0ki) and project manager Dmitriy Silaev. So, the workflow can be represented as following: Dmitriy made the main communication with client, then Lara made up adaptive designs which suited needs and goals of the project.
 
 Then I’ve got the designs made up in sketch. I am used to work in [Figma](https://www.figma.com/) with design files provided from other redactors, because it offers convenient interface for web developer to determine all the sizes, font styles, colors and other properties of design systems in the fastest way.
 

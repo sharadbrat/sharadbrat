@@ -12,8 +12,7 @@ export interface BlogArticleModel {
   title: string;
   description: string;
   timestamp: number;
-  contentId?: string;
-  text: string;
+  text?: string;
 }
 
 export class DemoModel {
