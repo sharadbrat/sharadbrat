@@ -16,5 +16,5 @@ Also I store source code for my [landing page](https://sharadbrat.com) here.
 `npm run build` - builds the page for prod
 
 
-[link_russian]: ./ru/README.md
-[link_english]: ./en/README.md
+[link_russian]: ./blog/ru/README.md
+[link_english]: ./blog/en/README.md
