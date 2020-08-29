@@ -1,0 +1,35 @@
+@import "style/main";
+
+.main {
+  position: relative;
+  height: 100%;
+
+  background: linear-gradient(45deg, #9900ff 0%, #ff4fa7 50%, #ffbb00 100%);
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.heading {
+
+  @include Subheading();
+  position: absolute;
+  z-index: 5000;
+  top: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  color: white;
+
+  will-change: opacity;
+
+  text-align: center;
+}

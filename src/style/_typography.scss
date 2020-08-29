@@ -1,110 +1,14 @@
-@import "variables";
-@import "media";
-
 $font-fallback: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
 @mixin FontHeading() {
   font-family: Montserrat, $font-fallback;
-}
-
-@mixin FontParagraph() {
-  font-family: Roboto, $font-fallback;
-}
-
-@mixin TypographyReset() {
-  color: $color-dark-text-primary;
-  text-decoration: none;
-  font-family: sans-serif;
-  font-size: 1rem;
-  line-height: 1rem;
   font-weight: 400;
 }
 
-@mixin TypographyHeadingLarge() {
-  @include TypographyReset();
+@mixin Subheading {
   @include FontHeading();
-  line-height: 4rem;
-  font-size: 4rem;
-  font-weight: 100;
-
-  @include MediaMobile() {
-    font-size: 2.5rem;
-    line-height: 1.5;
-  }
-}
-
-@mixin TypographyHeadingMedium() {
-  @include TypographyReset();
-  @include FontHeading();
-  line-height: 3rem;
-  font-size: 3rem;
-  font-weight: 300;
-
-  @include MediaMobile() {
-    font-size: 2rem;
-    line-height: 1.5;
-  }
-}
-
-@mixin TypographyHeadingSmall() {
-  @include TypographyReset();
-  @include FontHeading();
-  line-height: 2rem;
-  font-size: 2rem;
-  font-weight: 300;
-
-  @include MediaMobile() {
-    font-size: 1.5rem;
-    line-height: 1.5;
-  }
-}
-
-@mixin TypographyHeadingTiny() {
-  @include TypographyReset();
-  @include FontHeading();
-  line-height: 1.25rem;
-  font-size: 1.25rem;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-@mixin TypographyParagraph() {
-  @include TypographyReset();
-  @include FontParagraph();
-  font-size: 1rem;
-  line-height: 1.5;
-
-  text-align: justify;
-  hyphens: auto;
-  hyphenate-limit-chars: 6 3 3;
-  hyphenate-limit-lines: 2;
-  hyphenate-limit-last: always;
-  hyphenate-limit-zone: 8%;
-}
-
-@mixin TypographyLink() {
-  @include TypographyReset();
-  @include FontParagraph();
-  font-size: 1rem;
-  line-height: 1.5;
-  color: $color-palette-blue;
-  &:visited {
-    color: $color-palette-purple;
-  }
-}
-
-@mixin TypographyCaption() {
-  @include TypographyReset();
-  @include FontParagraph();
-  font-size: 0.875rem;
-  color: $color-dark-text-secondary;
-  font-weight: 400;
-}
-
-@mixin TypographyInterface() {
-  @include TypographyReset();
-  @include FontParagraph();
   font-size: 1.125rem;
   line-height: 1.125rem;
   letter-spacing: 1px;
+  font-size: 20px;
 }

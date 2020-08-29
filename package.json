@@ -1,43 +1,18 @@
 {
   "name": "sharadbrat",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
   "dependencies": {
-    "node-sass": "^4.11.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8",
-    "react-transition-group": "^2.9.0",
-    "showdown": "^1.9.0"
+    "parcel-bundler": "1.12.4",
+    "sass": "1.26.10"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "convert": "node markdown-to-html.js"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "@types/jest": "^24.0.11",
-    "@types/node": "^11.13.0",
-    "@types/react": "^16.8.12",
-    "@types/react-dom": "^16.8.3",
-    "@types/react-helmet": "^5.0.8",
-    "@types/react-router-dom": "^4.3.1",
-    "@types/react-transition-group": "^2.8.0",
-    "@types/showdown": "^1.9.3",
-    "typescript": "^3.4.2",
-    "yargs": "^13.2.4"
-  }
+  ]
 }

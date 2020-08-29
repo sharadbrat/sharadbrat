@@ -1,0 +1,191 @@
+@import "typography";
+
+@mixin word-animation($translateX, $name) {
+  @keyframes word-animation-#{$name} {
+    $base: -100vw;
+    $translateY: 0;
+    $border-radius: 70px;
+
+    0% {
+      transform: translate3d($base, $translateY, 1000px) rotateX(30deg) rotateY(45deg) scale(0.7);
+      animation-timing-function: ease-in-out;
+      border-radius: $border-radius;
+    }
+
+    25% {
+      transform: translate3d($translateX, $translateY, 1000px) rotateX(30deg) rotateY(45deg) scale(0.7);
+      border-radius: $border-radius;
+    }
+
+    33% {
+      transform: translate3d($translateX, $translateY, 1000px) rotateX(30deg) rotateY(45deg) scale(0.7);
+      animation-timing-function: ease-out;
+      border-radius: $border-radius;
+    }
+
+    43% {
+      transform: translate3d($translateX + $translateX / 8, $translateY, 1000px) rotateX(30deg) rotateY(45deg) scale(0.7);
+      border-radius: $border-radius;
+    }
+
+    48% {
+      transform: translate3d(0, $translateY, 1000px) rotateX(30deg) rotateY(45deg) scale(0.7);
+      border-radius: $border-radius;
+    }
+
+    54% {
+      transform: translate3d(0, $translateY, 1000px) rotateX(30deg) rotateY(45deg) scale(0.7);
+      border-radius: $border-radius;
+    }
+
+    68% {
+      transform: translate3d(0, $translateY, 1000px) rotateX(0) rotateY(0) scale(0.7);
+      animation-timing-function: ease-in-out;
+      border-radius: $border-radius;
+    }
+
+    85% {
+      transform: translate3d(0, $translateY, 1000px) rotateX(0) rotateY(0) scale(1);
+      border-radius: 0;
+    }
+  }
+}
+
+@keyframes background_animations {
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes background-canvas-animations {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,0,0) translateZ(-1000px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0) translateZ(0px);
+  }
+}
+
+@keyframes banner-color {
+  0% {
+    color: #000000;
+  }
+
+  100% {
+    color: #FFFFFF;
+  }
+}
+
+@keyframes navigation-color {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin all-words-animation($translateX) {
+  @include word-animation($translateX, 1);
+  @include word-animation(0, 2);
+  @include word-animation(-$translateX, 3);
+}
+
+@include all-words-animation(25%);
+
+$duration: 3s;
+$background-duration: 1s;
+
+#word-1 {
+  animation: word-animation-1 $duration linear, background_animations $background-duration ease-in-out $duration - $background-duration forwards;
+}
+
+#word-2 {
+  animation: word-animation-2 $duration linear, background_animations $background-duration ease-in-out $duration - $background-duration forwards;
+}
+
+#word-3 {
+  animation: word-animation-3 $duration linear, background_animations 200ms ease-in-out $duration - ($background-duration - .25s) forwards;
+}
+
+.animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+
+  will-change: background-color, color;
+
+  &__word {
+    @include FontHeading();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 124px;
+    z-index: 2000;
+
+    @media screen and (max-width: 645px) {
+      font-size: 52px;
+    }
+
+    @media screen and (max-height: 540px) {
+      font-size: 52px;
+    }
+
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    will-change: transform, border-radius, background-color;
+  }
+
+  &__phrase > ._invisible {
+    color: transparent;
+  }
+
+  animation-name: background_animations, banner-color;
+  animation-delay: $duration - ($background-duration);
+  animation-duration: $background-duration;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+
+  &__background {
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    position: absolute;
+    top: 0;
+
+    will-change: opacity;
+
+    transform: translate3d(0, 0, 0), translateY(-1000px);
+    z-index: 10;
+
+    animation-name: background-canvas-animations;
+    animation-delay: $duration - ($background-duration);
+    animation-duration: $background-duration;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+}
+
+.heading, .footer {
+  animation-name: navigation-color;
+  animation-delay: $duration;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+}
+
+.footer {
+  animation-delay: $duration + 500ms;
+}
