@@ -1,5 +1,8 @@
 # Articles
 
+## 2022
+- [8-bit of bauhaus, My first game-dev journey | Part 2 (09.01.2022)](./code/03.md)
+
 ## 2020
 
 - [8-bit of bauhaus, My first game-dev journey | Part 1 (15.09.2020)](./code/02.md)
